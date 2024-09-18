@@ -4,7 +4,7 @@ import imutils
 
 def ejecutar(nombre_carpeta):
     
-    rutadata = "C:/Users/ariad/OneDrive/Documentos/achinti/trabajo_nacional/data"
+    rutadata = "C:/Users/ariad/OneDrive/Documentos/achinti/trabajo_nacional1.0/avanzado/data"
     personadata = os.path.join(rutadata, nombre_carpeta)
 
     if not os.path.exists(personadata):
@@ -13,7 +13,7 @@ def ejecutar(nombre_carpeta):
 
     cap = cv2.VideoCapture(0)
 
-    faceclasif = cv2.CascadeClassifier('C:/Users/ariad/OneDrive/Documentos/achinti/trabajo_nacional/base de datos/haarcascade_frontalface_default.xml')
+    faceclasif = cv2.CascadeClassifier('C:/Users/ariad/OneDrive/Documentos/achinti/trabajo_nacional1.0/avanzado/haarcascade_frontalface_default.xml')
     count = 0
 
     while True:

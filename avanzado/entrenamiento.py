@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 def ejecutar_entrenamiento():
-    dataPath = "C:/Users/ariad/OneDrive/Documentos/achinti/trabajo_nacional/data"
+    dataPath = "C:/Users/ariad/OneDrive/Documentos/achinti/trabajo_nacional1.0/avanzado/data"
     peopleList = os.listdir(dataPath)
     labels = []
     facesData = []

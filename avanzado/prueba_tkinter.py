@@ -352,31 +352,23 @@ def abrir_ventana_crear_cuenta():
         contraseña = contraseña_entry.get()
         
         try:
-            # Establecer la conexión a la base de datos
              conn = pymysql.connect(host='localhost', user='root', db='asistencia')
         
-             # Crear un objeto cursor
              cur = conn.cursor()
         
-             # Preparar la consulta SQL para insertar los datos
              sql = "INSERT INTO usuario (correo, password) VALUES (%s, %s)"
            
-             # Ejecutar la consulta SQL con los valores obtenidos de los campos de entrada
              cur.execute(sql, (correo, contraseña))
         
-             # Confirmar los cambios en la base de datos
              conn.commit()
         
-             # Mostrar mensaje de éxito
              messagebox.showinfo("Cuenta Creada", "Cuenta creada exitosamente.")
              
              crear_cuenta_window.destroy()
         
         except Exception as e:
-             # Manejar cualquier error que ocurra durante la operación de inserción
              print(f"Ocurrió un error: {e}")
         finally:
-             # Cerrar la conexión a la base de datos
              if conn.open:
                  cur.close()
                  conn.close()
@@ -384,11 +376,9 @@ def abrir_ventana_crear_cuenta():
     crear_cuenta_btn = crear_boton(crear_cuenta_window, text="Crear Cuenta", command=guardar_info)
     crear_cuenta_btn.pack(pady=10)
 
-    # Botón para solo cerrar la ventana sin guardar datos
     cancelar_btn = crear_boton(crear_cuenta_window, text="Cancelar", command=crear_cuenta_window.destroy)
     cancelar_btn.pack(pady=10)
 
-# Función para mostrar la ventana de inicio de sesión
 def mostrar_ventana_inicio_sesion():
     inicio_sesion_window = tk.Toplevel(ventana_bienvenida)
     inicio_sesion_window.geometry("400x300")
@@ -466,7 +456,7 @@ def mostrar_ventana_inicio_sesion():
                 
                 nueva_ventana = tk.Toplevel(ventana_bienvenida)
                 nueva_ventana.title("Ventana nueva")
-                nueva_ventana.geometry("400x300")
+                nueva_ventana.geometry("750x300")
                 tk.Label(
         nueva_ventana,
         text="ESTA EN PROCESO... AGRADECEMOS SU COMPRENSIÓN",
